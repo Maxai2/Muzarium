@@ -44,6 +44,7 @@
       <HintPath>..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,20 +64,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\DataProvider.cs" />
     <Compile Include="Common\NotifiableObject.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Interface\IMuseumRepository.cs" />
+    <Compile Include="Interface\IPrizeRepository.cs" />
+    <Compile Include="Interface\IQuestionRepository.cs" />
+    <Compile Include="Interface\IQuestRepository.cs" />
+    <Compile Include="Interface\IStaticRepository.cs" />
+    <Compile Include="Repositories\MuseumRepository.cs" />
+    <Compile Include="Repositories\PrizeRepository.cs" />
+    <Compile Include="Repositories\QuestionRepository.cs" />
+    <Compile Include="Repositories\QuestRepository.cs" />
+    <Compile Include="Repositories\StaticRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Answers.cs" />
@@ -115,8 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Interface\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
     <Folder Include="View\" />
