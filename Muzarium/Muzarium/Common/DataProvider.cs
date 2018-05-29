@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using Autofac;
+using System.Data.Common;
 
 namespace Muzarium.Common
 {
     public class DataProvider
     {
         private static DataProvider instance;
+
+        public static IContainer Container { get; private set; }
         ContainerBuilder builder;
 
         public static DataProvider GetInstance()

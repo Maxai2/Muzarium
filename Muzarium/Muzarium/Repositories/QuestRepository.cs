@@ -30,7 +30,7 @@ namespace Muzarium.Repositories
             throw new NotImplementedException();
         }
 
-        public IList<Quests> GetQuests()
+        public List<Quests> GetQuests()
         {
             throw new NotImplementedException();
         }

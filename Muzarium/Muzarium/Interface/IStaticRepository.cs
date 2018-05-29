@@ -9,7 +9,7 @@ namespace Muzarium.Interface
 {
     public interface IStaticRepository
     {
-        IList<Statics> GetStatics();
+        List<Statics> GetStatics();
         Statics GetStaticById(int id);
         Statics AddStatic(Statics @static);
         Statics UpdateStatic(int id, Statics @static);

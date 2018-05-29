@@ -9,7 +9,7 @@ namespace Muzarium.Interface
 {
     public interface IPrizeRepository
     {
-        IList<Prizes> GetPrizes();
+        List<Prizes> GetPrizes();
         Prizes GetPrizeById(int id);
         Prizes UpdatePrize(int id, Prizes prize);
         Prizes AddPrize(Prizes prize);

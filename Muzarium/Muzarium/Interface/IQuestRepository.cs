@@ -9,7 +9,7 @@ namespace Muzarium.Interface
 {
     public interface IQuestRepository
     {
-        IList<Quests> GetQuests();
+        List<Quests> GetQuests();
         Quests GetQuestById(int id);
         Quests UpdateQuestById(int id, Quests quest);
         Quests AddQuest(Quests quest);

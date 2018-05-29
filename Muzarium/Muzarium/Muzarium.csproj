@@ -81,6 +81,9 @@
     <Compile Include="Repositories\QuestionRepository.cs" />
     <Compile Include="Repositories\QuestRepository.cs" />
     <Compile Include="Repositories\StaticRepository.cs" />
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Answers.cs" />
@@ -118,10 +121,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
-    <Folder Include="View\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

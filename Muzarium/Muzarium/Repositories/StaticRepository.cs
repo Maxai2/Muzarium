@@ -20,7 +20,7 @@ namespace Muzarium.Repositories
             throw new NotImplementedException();
         }
 
-        public IList<Statics> GetStatics()
+        public List<Statics> GetStatics()
         {
             throw new NotImplementedException();
         }
