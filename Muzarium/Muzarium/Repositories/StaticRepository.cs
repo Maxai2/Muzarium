@@ -14,17 +14,17 @@ namespace Muzarium.Repositories
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
         public Statics GetStaticById(int id)
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
         public List<Statics> GetStatics()
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
         public Statics UpdateStatic(int id, Statics @static)
         {
             throw new NotImplementedException();

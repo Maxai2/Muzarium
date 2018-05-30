@@ -18,14 +18,14 @@ namespace Muzarium.Repositories
         private DbConnection _connection;
         private ConnectionStringSettings constr = DataProvider.GetInstance().AcademyConnection();
 
-        public List<Museums> museums;
-
+        public Museums museum;
+        //-------------------------------------------------------------------------------
         public MuseumRepository()
         {
             _connectionString = constr.ConnectionString;
             _factory = DbProviderFactories.GetFactory(constr.ProviderName);
         }
-
+        //-------------------------------------------------------------------------------
         public bool OpenConnection()
         {
             try
@@ -40,13 +40,13 @@ namespace Muzarium.Repositories
                 return false;
             }
         }
-
+        //-------------------------------------------------------------------------------
         public void CloseConnection()
         {
             if (_connection != null)
                 _connection.Close();
         }
-
+        //-------------------------------------------------------------------------------
         public Museums GetMuseumById(int id)
         {
             try
@@ -88,12 +88,25 @@ namespace Muzarium.Repositories
                 return null;
             }
         }
-
-        public Museums UpdateMuseum(int id, Museums museum)
+        //-------------------------------------------------------------------------------
+        public Museums UpdateMuseum(Museums museum)
         {
-            throw new NotImplementedException();
-        }
+            this.museum.Address = museum.Address;
+            this.museum.CityId = museum.CityId;
+            this.museum.Description = museum.Description;
+            this.museum.Latitude = museum.Latitude;
+            this.museum.Login = museum.Login;
+            this.museum.Longitude = museum.Longitude;
+            this.museum.Password = museum.Password;
+            this.museum.Phone = museum.Phone;
+            this.museum.PictureSrc = museum.PictureSrc;
+            this.museum.Radius = museum.Radius;
+            this.museum.Title = museum.Title;
+            this.museum.WebSite = museum.WebSite;
 
+            return this.museum;
+        }
+        //-------------------------------------------------------------------------------
         public Museums AddMuseum(Museums museum)
         {
             throw new NotImplementedException();

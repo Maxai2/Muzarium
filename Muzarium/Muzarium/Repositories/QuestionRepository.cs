@@ -19,13 +19,13 @@ namespace Muzarium.Repositories
         private ConnectionStringSettings constr = DataProvider.GetInstance().AcademyConnection();
 
         public List<Questions> questions;
-
+        //-------------------------------------------------------------------------------
         public QuestionRepository()
         {
             _connectionString = constr.ConnectionString;
             _factory = DbProviderFactories.GetFactory(constr.ProviderName);
         }
-
+        //-------------------------------------------------------------------------------
         public bool OpenConnection()
         {
             try
@@ -40,13 +40,13 @@ namespace Muzarium.Repositories
                 return false;
             }
         }
-
+        //-------------------------------------------------------------------------------
         public void CloseConnection()
         {
             if (_connection != null)
                 _connection.Close();
         }
-
+        //-------------------------------------------------------------------------------
         public List<Questions> GetQuestions(int id)
         {
             try
@@ -84,22 +84,22 @@ namespace Muzarium.Repositories
                 return null;
             }
         }
-
+        //-------------------------------------------------------------------------------
         public Questions AddQuestion(Questions question)
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
         public void DeleteAllQustion(int id)
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
         public bool DeleteQuestion(int id)
         {
             throw new NotImplementedException();
         }
-
+        //-------------------------------------------------------------------------------
 
         public Questions UpdateQuestion(int id, Questions question)
         {
