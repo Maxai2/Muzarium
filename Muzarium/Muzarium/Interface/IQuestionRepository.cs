@@ -9,10 +9,9 @@ namespace Muzarium.Interface
 {
     public interface IQuestionRepository
     {
-        List<Questions> GetQuestions(int id);
+        void GetQuestions(int QuestId);
         Questions AddQuestion(Questions question);
         Questions UpdateQuestion(int id, Questions question);
         bool DeleteQuestion(int id);
-        void DeleteAllQustion(int id);
     }
 }

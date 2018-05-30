@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Muzarium.Repositories
 {
@@ -16,6 +17,8 @@ namespace Muzarium.Repositories
         private string _connectionString;
         private DbProviderFactory _factory;
         private DbConnection _connection;
+        private DataProvider instance = DataProvider.GetInstance();
+
         private ConnectionStringSettings constr = DataProvider.GetInstance().AcademyConnection();
 
         public List<Questions> questions;
@@ -33,6 +36,7 @@ namespace Muzarium.Repositories
                 _connection = _factory.CreateConnection();
                 _connection.ConnectionString = _connectionString;
                 _connection.Open();
+
                 return true;
             }
             catch (DbException)
@@ -47,7 +51,7 @@ namespace Muzarium.Repositories
                 _connection.Close();
         }
         //-------------------------------------------------------------------------------
-        public List<Questions> GetQuestions(int id)
+        public void GetQuestions(int QuestId)
         {
             try
             {
@@ -56,11 +60,10 @@ namespace Muzarium.Repositories
 
                 DbParameter parameter = _factory.CreateParameter();
                 parameter.ParameterName = "id";
-                parameter.Value = id;
+                parameter.Value = QuestId;
                 command.Parameters.Add(parameter);
 
                 DbDataReader reader = command.ExecuteReader();
-                List<Questions> questions = new List<Questions>();
 
                 while (reader.Read())
                 {
@@ -77,7 +80,32 @@ namespace Muzarium.Repositories
                 }
 
                 reader.Close();
-                return questions;
+            }
+            catch (DbException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        //-------------------------------------------------------------------------------
+        public Questions AddQuestion(Questions question)
+        {
+            try
+            {
+                DbCommand command = _connection.CreateCommand();
+                command.CommandText = "INSERT INTO Questions(Description, PictureSrc, Points, Hint, QuestionType, QuestId) VALUES (@Description, @PictureSrc, @Points, @Hint, @QuestionType, @QuestId)";
+
+                command.Parameters.Add(instance.GetParameter("Description", question.Description, _factory));
+                command.Parameters.Add(instance.GetParameter("PictureSrc", question.PictureSrc, _factory));
+                command.Parameters.Add(instance.GetParameter("Points", question.Points, _factory));
+                command.Parameters.Add(instance.GetParameter("Hint", question.Hint, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestionType", question.QuestionType, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestId", question.QuestId, _factory));
+
+                command.ExecuteNonQuery();
+
+                question.Id = instance.GetNewId("Questions", _connection);
+                questions.Add(question);
+                return question;
             }
             catch (DbException)
             {
@@ -85,22 +113,11 @@ namespace Muzarium.Repositories
             }
         }
         //-------------------------------------------------------------------------------
-        public Questions AddQuestion(Questions question)
-        {
-            throw new NotImplementedException();
-        }
-        //-------------------------------------------------------------------------------
-        public void DeleteAllQustion(int id)
-        {
-            throw new NotImplementedException();
-        }
-        //-------------------------------------------------------------------------------
         public bool DeleteQuestion(int id)
         {
             throw new NotImplementedException();
         }
         //-------------------------------------------------------------------------------
-
         public Questions UpdateQuestion(int id, Questions question)
         {
             throw new NotImplementedException();

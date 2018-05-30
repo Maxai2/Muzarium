@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Muzarium.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,16 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class LoginWindow : Window, ILoginWindow
     {
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        public void BindDataContext(ILoginWindowViewModel context)
+        {
+            throw new NotImplementedException();
         }
     }
 }
