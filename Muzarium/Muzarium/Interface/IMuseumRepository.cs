@@ -10,7 +10,8 @@ namespace Muzarium.Interface
     public interface IMuseumRepository
     {
         Museums GetMuseumById(int id);
-        Museums UpdateMuseum(Museums museum);
+        void UpdateMuseum(int i, Museums museum);
         Museums AddMuseum(Museums museum);
+        void GetMuseums();
     }
 }
