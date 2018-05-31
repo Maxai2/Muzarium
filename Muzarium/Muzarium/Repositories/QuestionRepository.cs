@@ -118,9 +118,34 @@ namespace Muzarium.Repositories
             throw new NotImplementedException();
         }
         //-------------------------------------------------------------------------------
-        public Questions UpdateQuestion(int id, Questions question)
+        public void UpdateQuestion(int i, Questions question)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
+                command.CommandText = "UPDATE Questions SET Description = @Description, PictureSrc = @PictureSrc, Points = @Points, Hint = @Hint, QuestionType = @QuestionType, QuestId = @QuestId";
+
+                command.Parameters.Add(instance.GetParameter("Description", question.Description, _factory));
+                command.Parameters.Add(instance.GetParameter("PictureSrc", question.PictureSrc, _factory));
+                command.Parameters.Add(instance.GetParameter("Points", question.Points, _factory));
+                command.Parameters.Add(instance.GetParameter("Hint", question.Hint, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestionType", question.QuestionType, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestId", question.QuestId, _factory));
+
+                command.ExecuteNonQuery();
+
+                questions[i].Description = question.Description;
+                questions[i].Hint = question.Hint;
+                questions[i].PictureSrc = question.PictureSrc;
+                questions[i].Points = question.Points;
+                questions[i].QuestId = question.QuestId;
+                questions[i].QuestionType = question.QuestionType;
+
+            }
+            catch (DbException)
+            {
+                throw;
+            }
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Muzarium.View
 
         public void BindDataContext(ILoginWindowViewModel context)
         {
-            throw new NotImplementedException();
+            this.DataContext = context;
         }
     }
 }

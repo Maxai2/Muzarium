@@ -82,6 +82,10 @@ namespace Muzarium.Repositories
                 command.Parameters.Add(instance.GetParameter("id", id, _factory));
 
                 command.ExecuteNonQuery();
+
+                var item = prizes.FirstOrDefault(i => i.Id == id);
+                prizes.Remove(item);
+
                 return true;
             }
             catch (DbException)
@@ -99,12 +103,24 @@ namespace Muzarium.Repositories
 
                 command.Parameters.Add(instance.GetParameter("id", id, _factory));
 
-                
+                DbDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    Prizes prize = new Prizes();
+
+                    prize.Id = Convert.ToInt32(reader["Id"]);
+                    prize.PictureSrc = Convert.ToString(reader["PictureSrc"]);
+                    prize.PrizeName = Convert.ToString(reader["PrizeName"]);
+
+                    return prize;
+                }
+
+                return null;
             }
             catch (DbException)
             {
-
-                throw;
+                return null;
             }
         }
         //-------------------------------------------------------------------------------

@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Muzarium.View"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="LoginWindow" Height="450" Width="300">
+	<Grid >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Image Grid.Row="0" Source="pack://application:,,,/Resources/MuzariumIcon.PNG" Height="50"/>
+
+		<TabControl Grid.Row="1">
+			<TabItem Header="Login">
+				<local:PasswordBoxWithHint />
+			</TabItem>
+			<TabItem Header="Registeration">
+
+			</TabItem>
+		</TabControl>
+	</Grid>
 </Window>

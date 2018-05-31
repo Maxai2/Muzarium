@@ -11,7 +11,7 @@ namespace Muzarium.Interface
     {
         void GetQuestions(int QuestId);
         Questions AddQuestion(Questions question);
-        Questions UpdateQuestion(int id, Questions question);
+        void UpdateQuestion(int i, Questions question);
         bool DeleteQuestion(int id);
     }
 }

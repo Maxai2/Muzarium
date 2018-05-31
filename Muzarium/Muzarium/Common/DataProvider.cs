@@ -41,7 +41,10 @@ namespace Muzarium.Common
             builder = new ContainerBuilder();
 
             builder.RegisterType<LoginWindow>().As<ILoginWindow>();
+            builder.RegisterType<MainWindow>().As<IMainWindow>();
+
             builder.RegisterType<LoginWindowViewModel>().As<ILoginWindowViewModel>();
+            builder.RegisterType<MainWindowViewModel>().As<IMainWindowViewModel>();
 
             Container = builder.Build();
         }
