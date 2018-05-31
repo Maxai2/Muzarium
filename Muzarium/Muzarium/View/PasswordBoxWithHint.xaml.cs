@@ -1,4 +1,5 @@
 ﻿using Muzarium.Common;
+using Muzarium.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,36 +25,63 @@ namespace Muzarium.View
         public PasswordBoxWithHint()
         {
             InitializeComponent();
+
         }
 
-        private ICommand clickCommand;
-        public ICommand ClickCommand
+        bool change = true;
+
+        private ICommand showCommand;
+        public ICommand ShowCommand
         {
             get
             {
-                if (this.clickCommand is null)
+                if (this.showCommand is null)
                 {
-                    this.clickCommand = new RelayCommand(
+                    this.showCommand = new RelayCommand(
                         (param) =>
                         {
-                            FakePass.Text = PassBox.Password;
+                            if (change)
+                            {
+                                PassBox.Visibility = Visibility.Collapsed;
+                                FakePass.Visibility = Visibility.Visible;
+                            }
+                            else
+                            {
+                                PassBox.Visibility = Visibility.Visible;
+                                FakePass.Visibility = Visibility.Collapsed;
+                            }
 
-                            PassBox.Visibility = Visibility.Collapsed;
-                            FakePass.Visibility = Visibility.Visible;
-
-
+                            change = !change;
                         },
                         (param) =>
                         {
-                            if (PassBox.Password == String.Empty)
-                                return false;
+                            if (FakePass.Text == string.Empty)
+                                return true;
                             else
                                 return true;
                         });
                 }
-                return this.clickCommand;
+                return this.showCommand;
             }
         }
 
+        private ICommand hintCommand;
+        public ICommand HintCommand
+        {
+            get
+            {
+                if (hintCommand is null)
+                {
+                    hintCommand = new RelayCommand(
+                        (param) =>
+                        {
+                            PassBox.Visibility = Visibility.Visible;
+                            FakePass.Visibility = Visibility.Collapsed;
+
+                        }, null);
+                }
+                return hintCommand;
+            }
+        }
     }
 }

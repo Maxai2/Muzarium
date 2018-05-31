@@ -106,34 +106,107 @@ namespace Muzarium.Repositories
         //-------------------------------------------------------------------------------
         public Quests GetQuestById(int id)
         {
-            //try
-            //{
-            //    DbCommand command = _factory.CreateCommand();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
 
-            //    command.CommandText = "SELECT * FROM Quest WHERE Id = @id";
+                command.CommandText = "SELECT * FROM Quest WHERE Id = @id";
 
-            //    command.Parameters.Add(instance.GetParameter("id", id, _factory));
+                command.Parameters.Add(instance.GetParameter("id", id, _factory));
 
-            //    DbDataReader reader = command.ExecuteReader();
+                DbDataReader reader = command.ExecuteReader();
 
+                if (reader.Read())
+                {
+                    Quests quest = new Quests();
 
-            //}
-            //catch (DbException)
-            //{
+                    quest.Description = Convert.ToString(reader["Description"]);
+                    quest.MuseumId = Convert.ToInt32(reader["MuseumId"]);
+                    quest.PictureSrc = Convert.ToString(reader["PictureSrc"]);
+                    quest.Points = Convert.ToInt32(reader["Points"]);
+                    quest.PrizesId = Convert.ToInt32(reader["PrizesId"]);
+                    quest.Title = Convert.ToString(reader["Title"]);
+                    quest.Difficult = Convert.ToInt32(reader["Difficult"]);
+                    quest.Id = Convert.ToInt32(reader["Id"]);
 
-            //    throw;
-            //}
-            throw new NotImplementedException();
+                    return quest;
+                }
+
+                return null;
+            }
+            catch (DbException)
+            {
+                return null;
+            }
         }
         //-------------------------------------------------------------------------------
-        public List<Quests> GetQuests()
+        public List<Quests> GetQuests(int MuseumId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
+                command.CommandText = "SELECT * FROM Quests WHERE MuseumId = @MuseumId";
+
+                command.Parameters.Add(instance.GetParameter("MuseumId", MuseumId, _factory));
+
+                DbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Quests quest = new Quests();
+
+                    quest.Description = Convert.ToString(reader["Description"]);
+                    quest.MuseumId = Convert.ToInt32(reader["MuseumId"]);
+                    quest.PictureSrc = Convert.ToString(reader["PictureSrc"]);
+                    quest.Points = Convert.ToInt32(reader["Points"]);
+                    quest.PrizesId = Convert.ToInt32(reader["PrizesId"]);
+                    quest.Title = Convert.ToString(reader["Title"]);
+                    quest.Difficult = Convert.ToInt32(reader["Difficult"]);
+                    quest.Id = Convert.ToInt32(reader["Id"]);
+
+                    quests.Add(quest);
+                }
+
+                return quests;
+            }
+            catch (DbException)
+            {
+                return null;
+            }
         }
         //-------------------------------------------------------------------------------
-        public Quests UpdateQuestById(int id, Quests quest)
+        public Quests UpdateQuestById(int i, Quests quest)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
+
+                command.CommandText = "UPDATE Quests SET Title = @Title, Description = @Description, Difficult = @Difficult, PictureSrc = @PictureSrc, Points = @Points, MuseumId = @MuseumId, PrizesId = @PrizesId";
+
+                command.Parameters.Add(instance.GetParameter("Title", quest.Title, _factory));
+                command.Parameters.Add(instance.GetParameter("Description", quest.Description, _factory));
+                command.Parameters.Add(instance.GetParameter("Difficult", quest.Difficult, _factory));
+                command.Parameters.Add(instance.GetParameter("PictureSrc", quest.PictureSrc, _factory));
+                command.Parameters.Add(instance.GetParameter("Points", quest.Points, _factory));
+                command.Parameters.Add(instance.GetParameter("MuseumId", quest.MuseumId, _factory));
+                command.Parameters.Add(instance.GetParameter("PrizesId", quest.PrizesId, _factory));
+
+                command.ExecuteNonQuery();
+
+                quests[i].Description = quest.Description;
+                quests[i].Difficult = quest.Difficult;
+                quests[i].MuseumId = quest.MuseumId;
+                quests[i].PictureSrc = quest.PictureSrc;
+                quests[i].Points = quest.Points;
+                quests[i].PrizesId = quest.PrizesId;
+                quests[i].Title = quest.Title;
+
+                return quest;
+            }
+            catch (DbException)
+            {
+                return null;
+            }
         }
     }
 }

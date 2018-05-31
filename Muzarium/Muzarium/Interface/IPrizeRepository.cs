@@ -11,7 +11,7 @@ namespace Muzarium.Interface
     {
         List<Prizes> GetPrizes();
         Prizes GetPrizeById(int id);
-        Prizes UpdatePrize(int id, Prizes prize);
+        Prizes UpdatePrize(int i, Prizes prize);
         Prizes AddPrize(Prizes prize);
         bool DeletePrize(int id);
     }

@@ -126,12 +126,54 @@ namespace Muzarium.Repositories
         //-------------------------------------------------------------------------------
         public List<Prizes> GetPrizes()
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
+
+                command.CommandText = "SELECT * FROM Prizes";
+
+                DbDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Prizes prize = new Prizes();
+
+                    prize.Id = Convert.ToInt32(reader["Id"]);
+                    prize.PictureSrc = Convert.ToString(reader["PictureSrc"]);
+                    prize.PrizeName = Convert.ToString(reader["PrizeName"]);
+
+                    prizes.Add(prize);
+                }
+
+                return prizes;
+            }
+            catch (DbException)
+            {
+                return null;
+            }
         }
         //-------------------------------------------------------------------------------
-        public Prizes UpdatePrize(int id, Prizes prize)
+        public Prizes UpdatePrize(int i, Prizes prize)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DbCommand command = _factory.CreateCommand();
+                command.CommandText = "UPDATE Prizes SET PictureSrc = @PictureSrc, PrizeName = @PrizeName";
+
+                command.Parameters.Add(instance.GetParameter("PictureSrc", prize.PictureSrc, _factory));
+                command.Parameters.Add(instance.GetParameter("PrizeName", prize.PrizeName, _factory));
+
+                command.ExecuteNonQuery();
+
+                prizes[i].PictureSrc = prize.PictureSrc;
+                prizes[i].PrizeName = prize.PrizeName;
+
+                return prize;
+            }
+            catch (DbException)
+            {
+                return null;
+            }
         }
     }
 }

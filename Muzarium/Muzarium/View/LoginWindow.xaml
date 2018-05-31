@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Muzarium.View"
+								xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="300">
-	<Grid >
+        Title="LoginWindow" Height="450" Width="300" WindowStartupLocation="CenterScreen">
+	<Grid Background="#2D3E50">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition/>
@@ -16,7 +17,19 @@
 
 		<TabControl Grid.Row="1">
 			<TabItem Header="Login">
-				<local:PasswordBoxWithHint />
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+
+					<StackPanel Grid.Row="1">
+						<TextBox material:HintAssist.Hint="Login" Margin="0 10"/>
+						<local:PasswordBoxWithHint Margin="0 10"/>
+					</StackPanel>
+
+				</Grid>
 			</TabItem>
 			<TabItem Header="Registeration">
 

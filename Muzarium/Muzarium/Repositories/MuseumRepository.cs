@@ -21,6 +21,7 @@ namespace Muzarium.Repositories
         private DataProvider instance = DataProvider.GetInstance();
 
         public List<Museums> museums;
+        public Museums museum;
         //-------------------------------------------------------------------------------
         public MuseumRepository()
         {
@@ -62,8 +63,6 @@ namespace Muzarium.Repositories
 
                 if (reader.Read())
                 {
-                    Museums museum = new Museums();
-
                     museum.Title = Convert.ToString(reader["Title"]);
                     museum.Description = Convert.ToString(reader["Description"]);
                     museum.Address = Convert.ToString(reader["Address"]);
@@ -76,15 +75,11 @@ namespace Muzarium.Repositories
                     museum.Longitude = Convert.ToSingle(reader["Longitude"]);
                     museum.Radius = Convert.ToSingle(reader["Radius"]);
                     museum.CityId = Convert.ToInt32(reader["CityId"]);
-
-                    return museum;
                 }
-
-                return null;
             }
             catch (DbException)
             {
-                return null;
+                throw;
             }
         }
         //-------------------------------------------------------------------------------

@@ -9,9 +9,9 @@ namespace Muzarium.Interface
 {
     public interface IQuestRepository
     {
-        List<Quests> GetQuests();
+        List<Quests> GetQuests(int MuseumId);
         Quests GetQuestById(int id);
-        Quests UpdateQuestById(int id, Quests quest);
+        Quests UpdateQuestById(int i, Quests quest);
         Quests AddQuest(Quests quest);
         bool DeleteQuest(int id);
         bool DeleteAllQuests();

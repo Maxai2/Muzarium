@@ -23,6 +23,7 @@ namespace Muzarium.View
         public LoginWindow()
         {
             InitializeComponent();
+            DataContext = new PasswordBoxWithHint();
         }
 
         public void BindDataContext(ILoginWindowViewModel context)
