@@ -83,5 +83,24 @@ namespace Muzarium.View
                 return hintCommand;
             }
         }
+
+        private ICommand okeyButton;
+
+        public ICommand OkeyButton
+        {
+            get
+            {
+                if (okeyButton is null)
+                {
+                    okeyButton = new RelayCommand(
+                        (param) =>
+                        {
+                            
+                        }, null);
+                }
+                return okeyButton;
+            }
+        }
+
     }
 }

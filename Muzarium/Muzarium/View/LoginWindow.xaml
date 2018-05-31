@@ -29,6 +29,8 @@
 						<local:PasswordBoxWithHint Margin="0 10"/>
 					</StackPanel>
 
+					<Button Grid.Row="2" Content="Ok" Background="AliceBlue" Command="{Binding OkeyButton}"/>
+
 				</Grid>
 			</TabItem>
 			<TabItem Header="Registeration">
