@@ -19,7 +19,7 @@
 		<Border Grid.Row="0" CornerRadius="6" Background="Transparent" BorderThickness="2" BorderBrush="#2D3E50">
 			<StackPanel Background="#2D3E50">
 				<StackPanel HorizontalAlignment="Left">
-					<Image Source="pack://application:,,,/Resources/MuzariumIcon.PNG" Height="50" Margin="30 0 0 0" Cursor="Hand"/>
+					<Image Source="../Resources/MuzariumIcon.PNG" Height="50" Margin="30 0 0 0" Cursor="Hand"/>
 				</StackPanel>
 			</StackPanel>
 		</Border>
@@ -117,9 +117,11 @@
 										</Grid.RowDefinitions>
 
 										<StackPanel Grid.Row="0" Orientation="Horizontal">
-											<Border BorderBrush="{Binding}" BorderThickness="5" CornerRadius="45">
-												<Image Source="{Binding}"/>
-											</Border>
+											<Ellipse Grid.Column="0" Height="80" Width="80" Stroke="{Binding}" StrokeThickness="4">
+												<Ellipse.Fill>
+													<ImageBrush ImageSource="{Binding}"/>
+												</Ellipse.Fill>
+											</Ellipse>
 
 											<StackPanel Orientation="Vertical">
 												<Label Content="{Binding}" Foreground="#2D3E50" FontSize="17"/>

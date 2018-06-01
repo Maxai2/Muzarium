@@ -51,18 +51,18 @@ namespace Muzarium.Model
             set { this.duration = value; base.OnPropertyChanged(); }
         }
 
-        private DateTime myVar;
-        public DateTime MyProperty
+        private DateTime dateTime;
+        public DateTime DateTime
         {
-            get { return myVar; }
-            set { myVar = value; }
+            get { return this.dateTime; }
+            set { this.dateTime = value; base.OnPropertyChanged(); }
         }
 
-        private int prize;
-        public int Prize
+        private int prizeId;
+        public int PrizeId
         {
-            get { return prize; }
-            set { prize = value; base.OnPropertyChanged(); }
+            get { return this.prizeId; }
+            set { this.prizeId = value; base.OnPropertyChanged(); }
         }
 
 

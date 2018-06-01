@@ -12,6 +12,6 @@ namespace Muzarium.Interface
         List<Statics> GetStatics();
         Statics GetStaticById(int id);
         Statics AddStatic(Statics @static);
-        Statics UpdateStatic(int id, Statics @static);
+        Statics UpdateStatic(int i, Statics @static);
     }
 }

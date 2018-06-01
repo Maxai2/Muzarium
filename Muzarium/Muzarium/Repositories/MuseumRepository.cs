@@ -50,7 +50,7 @@ namespace Muzarium.Repositories
                 _connection.Close();
         }
         //-------------------------------------------------------------------------------
-        public Museums GetMuseumById(int id)
+        public void GetMuseumById(int id)
         {
             try
             {

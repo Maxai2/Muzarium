@@ -20,7 +20,7 @@ namespace Muzarium.Repositories
 
         private ConnectionStringSettings constr = DataProvider.GetInstance().AcademyConnection();
 
-        public List<Quests> quests;
+        public List<Statics> statics;
         //-------------------------------------------------------------------------------
         public StaticRepository()
         {
@@ -56,16 +56,21 @@ namespace Muzarium.Repositories
             {
                 DbCommand command = _factory.CreateCommand();
 
-                command.CommandText = "INSERT INTO Prizes (PrizeName, PictureSrc) VALUES (@PrizeName, @PictureSrc)";
+                command.CommandText = "INSERT INTO Statics (UserId, QuestId, IsCompleted, Points, Duration, [DateTime], PrizeId) VALUES (@UserId, @QuestId, @IsCompleted, @Points, @Duration, @DateTime, @PrizeId)";
 
-                command.Parameters.Add(instance.GetParameter("PrizeName", prize.PrizeName, _factory));
-                command.Parameters.Add(instance.GetParameter("PictureSrc", prize.PictureSrc, _factory));
+                command.Parameters.Add(instance.GetParameter("UserId", @static.UserId, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestId", @static.QuestId, _factory));
+                command.Parameters.Add(instance.GetParameter("IsCompleted", @static.IsCompleted, _factory));
+                command.Parameters.Add(instance.GetParameter("Points", @static.Points, _factory));
+                command.Parameters.Add(instance.GetParameter("Duration", @static.Duration, _factory));
+                command.Parameters.Add(instance.GetParameter("DateTime", @static.DateTime, _factory));
+                command.Parameters.Add(instance.GetParameter("PrizeId", @static.PrizeId, _factory));
 
                 command.ExecuteNonQuery();
 
-                prize.Id = instance.GetNewId("Prizes", _connection);
-                prizes.Add(prize);
-                return prize;
+                @static.Id = instance.GetNewId("Statics", _connection);
+                statics.Add(@static);
+                return @static;
             }
             catch (DbException)
             {
@@ -78,7 +83,7 @@ namespace Muzarium.Repositories
             try
             {
                 DbCommand command = _factory.CreateCommand();
-                command.CommandText = "SELECT * FROM Prizes WHERE Id = @id";
+                command.CommandText = "SELECT * FROM Statics WHERE Id = @id";
 
                 command.Parameters.Add(instance.GetParameter("id", id, _factory));
 
@@ -86,13 +91,18 @@ namespace Muzarium.Repositories
 
                 if (reader.Read())
                 {
-                    Prizes prize = new Prizes();
+                    Statics @static = new Statics();
 
-                    prize.Id = Convert.ToInt32(reader["Id"]);
-                    prize.PictureSrc = Convert.ToString(reader["PictureSrc"]);
-                    prize.PrizeName = Convert.ToString(reader["PrizeName"]);
+                    @static.DateTime = Convert.ToDateTime(reader["DateTime"]);
+                    @static.Duration = Convert.ToDateTime(reader["Duration"]);
+                    @static.Id = Convert.ToInt32(reader["Id"]);
+                    @static.IsCompleted = Convert.ToBoolean(reader["IsCompleted"]);
+                    @static.Points = Convert.ToInt32(reader["Points"]);
+                    @static.PrizeId = Convert.ToInt32(reader["PrizeId"]);
+                    @static.QuestId = Convert.ToInt32(reader["QuestId"]);
+                    @static.UserId = Convert.ToInt32(reader["UserId"]);
 
-                    return prize;
+                    return @static;
                 }
 
                 return null;
@@ -109,22 +119,27 @@ namespace Muzarium.Repositories
             {
                 DbCommand command = _factory.CreateCommand();
 
-                command.CommandText = "SELECT * FROM Prizes";
+                command.CommandText = "SELECT * FROM Statics";
 
                 DbDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    Prizes prize = new Prizes();
+                    Statics @static = new Statics();
 
-                    prize.Id = Convert.ToInt32(reader["Id"]);
-                    prize.PictureSrc = Convert.ToString(reader["PictureSrc"]);
-                    prize.PrizeName = Convert.ToString(reader["PrizeName"]);
+                    @static.DateTime = Convert.ToDateTime(reader["DateTime"]);
+                    @static.Duration = Convert.ToDateTime(reader["Duration"]);
+                    @static.Id = Convert.ToInt32(reader["Id"]);
+                    @static.IsCompleted = Convert.ToBoolean(reader["IsCompleted"]);
+                    @static.Points = Convert.ToInt32(reader["Points"]);
+                    @static.PrizeId = Convert.ToInt32(reader["PrizeId"]);
+                    @static.QuestId = Convert.ToInt32(reader["QuestId"]);
+                    @static.UserId = Convert.ToInt32(reader["UserId"]);
 
-                    prizes.Add(prize);
+                    statics.Add(@static);
                 }
 
-                return prizes;
+                return statics;
             }
             catch (DbException)
             {
@@ -132,22 +147,32 @@ namespace Muzarium.Repositories
             }
         }
         //-------------------------------------------------------------------------------
-        public Statics UpdateStatic(int id, Statics @static)
+        public Statics UpdateStatic(int i, Statics @static)
         {
             try
             {
                 DbCommand command = _factory.CreateCommand();
-                command.CommandText = "UPDATE Prizes SET PictureSrc = @PictureSrc, PrizeName = @PrizeName";
+                command.CommandText = "UPDATE Statics SET UserId = @UserId, QuestId = @QuestId, IsCompleted = @IsCompleted, Points = @Points, Duration = @Duration, [DateTime] = @DateTime, PrizeId = @PrizeId";
 
-                command.Parameters.Add(instance.GetParameter("PictureSrc", prize.PictureSrc, _factory));
-                command.Parameters.Add(instance.GetParameter("PrizeName", prize.PrizeName, _factory));
+                command.Parameters.Add(instance.GetParameter("UserId", @static.UserId, _factory));
+                command.Parameters.Add(instance.GetParameter("QuestId", @static.QuestId, _factory));
+                command.Parameters.Add(instance.GetParameter("IsCompleted", @static.IsCompleted, _factory));
+                command.Parameters.Add(instance.GetParameter("Points", @static.Points, _factory));
+                command.Parameters.Add(instance.GetParameter("Duration", @static.Duration, _factory));
+                command.Parameters.Add(instance.GetParameter("DateTime", @static.DateTime, _factory));
+                command.Parameters.Add(instance.GetParameter("PrizeId", @static.PrizeId, _factory));
 
                 command.ExecuteNonQuery();
 
-                prizes[i].PictureSrc = prize.PictureSrc;
-                prizes[i].PrizeName = prize.PrizeName;
+                statics[i].DateTime = @static.DateTime;
+                statics[i].Duration = @static.Duration;
+                statics[i].IsCompleted = @static.IsCompleted;
+                statics[i].Points = @static.Points;
+                statics[i].PrizeId = @static.PrizeId;
+                statics[i].QuestId = @static.QuestId;
+                statics[i].UserId = @static.UserId;
 
-                return prize;
+                return @static;
             }
             catch (DbException)
             {

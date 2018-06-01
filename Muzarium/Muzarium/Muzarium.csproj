@@ -111,8 +111,14 @@
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\InfoAboutQuest.xaml.cs">
+      <DependentUpon>InfoAboutQuest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PasswordBoxWithHint.xaml.cs">
       <DependentUpon>PasswordBoxWithHint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileEditing.xaml.cs">
+      <DependentUpon>ProfileEditing.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +166,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\InfoAboutQuest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PasswordBoxWithHint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

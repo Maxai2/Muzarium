@@ -19,7 +19,7 @@
 			<TabItem Header="Login">
 				<Grid>
 					<Grid.RowDefinitions>
-						<RowDefinition/>
+						<RowDefinition Height="0.5*"/>
 						<RowDefinition Height="Auto"/>
 						<RowDefinition/>
 					</Grid.RowDefinitions>
@@ -27,6 +27,7 @@
 					<StackPanel Grid.Row="1">
 						<TextBox material:HintAssist.Hint="Login" Margin="0 10"/>
 						<local:PasswordBoxWithHint Margin="0 10"/>
+
 					</StackPanel>
 
 					<Button Grid.Row="2" Content="Ok" Background="AliceBlue" Command="{Binding OkeyButton}"/>
