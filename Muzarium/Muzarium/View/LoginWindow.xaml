@@ -13,7 +13,7 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
-		<Image Grid.Row="0" Source="pack://application:,,,/Resources/MuzariumIcon.PNG" Height="50"/>
+		<Image Grid.Row="0" Source="../Resources/MuzariumIcon.PNG" Height="50"/>
 
 		<TabControl Grid.Row="1">
 			<TabItem Header="Login">
@@ -30,11 +30,13 @@
 
 					</StackPanel>
 
-					<Button Grid.Row="2" Content="Ok" Background="AliceBlue" Command="{Binding OkeyButton}"/>
+					<Button Grid.Row="2" Content="Ok" Background="AliceBlue" Command="{Binding LoginCommand}"/>
 
 				</Grid>
 			</TabItem>
 			<TabItem Header="Registeration">
+
+
 
 			</TabItem>
 		</TabControl>

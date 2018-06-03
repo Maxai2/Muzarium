@@ -15,5 +15,10 @@ namespace Muzarium.ViewModel
         }
 
         public IMainWindow View { get; private set; }
+
+        public bool? ShowDialog()
+        {
+            return this.View.ShowDialog();
+        }
     }
 }

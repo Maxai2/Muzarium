@@ -24,5 +24,10 @@ namespace Muzarium.View
         {
             InitializeComponent();
         }
+
+        public void BindDataContext(IMainWindowViewModel context)
+        {
+            this.DataContext = context;
+        }
     }
 }

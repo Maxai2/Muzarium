@@ -9,5 +9,6 @@ namespace Muzarium.Interface
     public interface IMainWindowViewModel
     {
         IMainWindow View { get; }
+        bool? ShowDialog();
     }
 }

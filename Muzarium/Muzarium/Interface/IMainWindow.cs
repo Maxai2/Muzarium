@@ -8,5 +8,7 @@ namespace Muzarium.Interface
 {
     public interface IMainWindow
     {
+        void BindDataContext(IMainWindowViewModel context);
+        bool? ShowDialog();
     }
 }

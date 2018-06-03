@@ -84,23 +84,5 @@ namespace Muzarium.View
             }
         }
 
-        private ICommand okeyButton;
-
-        public ICommand OkeyButton
-        {
-            get
-            {
-                if (okeyButton is null)
-                {
-                    okeyButton = new RelayCommand(
-                        (param) =>
-                        {
-                            
-                        }, null);
-                }
-                return okeyButton;
-            }
-        }
-
     }
 }
