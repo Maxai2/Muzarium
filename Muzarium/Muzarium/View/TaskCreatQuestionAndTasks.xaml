@@ -3,6 +3,7 @@
 						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 						xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 						xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+						xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
 						xmlns:local="clr-namespace:Muzarium.View"
 						mc:Ignorable="d" 
 						d:DesignHeight="450" d:DesignWidth="800"
@@ -15,29 +16,39 @@
 			<ListView.ItemTemplate>
 				<DataTemplate>-->
 
-					<Border BorderBrush="LightGray" BorderThickness="1">
-						<Expander Foreground="#ECF0F1" Margin="3">
-							<Expander.Header>
-								<Grid>
-									<StackPanel Orientation="Horizontal">
-										<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
-										<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
-									</StackPanel>
+		<Border BorderBrush="LightGray" BorderThickness="1">
+			<Expander Foreground="#ECF0F1" Margin="3">
+				<Expander.Header>
+					<Grid Margin="0 0 -55 0">
+						<StackPanel Orientation="Horizontal">
+							
+						<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
+						<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="#2D3E50"/>
+						</StackPanel>
 
-									<Label Content="124453" HorizontalContentAlignment="Right" Margin="0 0 -25 0" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-									<Label Content="MP" HorizontalContentAlignment="Right" Margin="0 0 -50 0" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
-								</Grid>
-							</Expander.Header>
+							<Label Content="124453" HorizontalContentAlignment="Right" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
 
-							<StackPanel Background="White">
-								<Image Source="../Resources/MuzariumIcon.PNG" Height="Auto" Width="100"/>
-								<Label Content="Ответ(ы):" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-								<Label Content="ffdgfdg" HorizontalContentAlignment="Center" FontSize="16"/>
-							</StackPanel>
-						</Expander>
-					</Border>
-				<!--</DataTemplate>
+							<Label Content="MP" HorizontalContentAlignment="Right"  FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+
+							<material:PackIcon Kind="Pencil" />
+
+							<material:PackIcon HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="LightGray"  Background="Transparent" Kind="Close" Height="20" Width="20"/>
+							
+						</StackPanel>
+					</Grid>
+
+				</Expander.Header>
+
+				<StackPanel Background="White">
+					<Image Source="../Resources/MuzariumIcon.PNG" Height="Auto" Width="100"/>
+					<Label Content="Ответ(ы):" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+					<Label Content="ffdgfdg" HorizontalContentAlignment="Center" FontSize="16"/>
+				</StackPanel>
+			</Expander>
+		</Border>
+		<!--</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>-->
 
