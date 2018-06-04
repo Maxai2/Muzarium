@@ -6,7 +6,7 @@
 						xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
 						xmlns:local="clr-namespace:Muzarium.View"
 						mc:Ignorable="d" 
-						d:DesignHeight="450" d:DesignWidth="800"
+						d:DesignHeight="450" d:DesignWidth="825"
 						Title="TaskCreatQuestionAndTasks">
 
 	<StackPanel Background="White">
@@ -21,9 +21,9 @@
 				<Expander.Header>
 					<Grid Margin="0 0 -55 0">
 						<StackPanel Orientation="Horizontal">
-							
-						<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
-						<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="#2D3E50"/>
+
+							<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
+							<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="#2D3E50"/>
 						</StackPanel>
 
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -32,22 +32,95 @@
 
 							<Label Content="MP" HorizontalContentAlignment="Right"  FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
 
-							<material:PackIcon Kind="Pencil" />
+							<Button Background="#95A5A5" Content="вниз" Margin="5"/>
 
-							<material:PackIcon HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="LightGray"  Background="Transparent" Kind="Close" Height="20" Width="20"/>
-							
+							<Button Margin="5" Background="#95A5A5" Content="вверх"/>
+
+							<material:PackIcon Kind="Pencil" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="20" Foreground="#7E9293" Margin="5"/>
+
+							<material:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"  Background="Transparent" Kind="Close" Height="20" Width="20"/>
+
 						</StackPanel>
 					</Grid>
 
 				</Expander.Header>
 
-				<StackPanel Background="White">
-					<Image Source="../Resources/MuzariumIcon.PNG" Height="Auto" Width="100"/>
-					<Label Content="Ответ(ы):" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-					<Label Content="ffdgfdg" HorizontalContentAlignment="Center" FontSize="16"/>
-				</StackPanel>
+				<Border Margin="5" BorderThickness="1" BorderBrush="LightGray">
+
+					<UniformGrid Background="White" Columns="4">
+						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+							<StackPanel>
+								
+								<material:PackIcon Kind="Textbox" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+								
+								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+								<Label Content="(Текстовое поле)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
+
+								<TextBlock Text="Посетитель получит вопрос и должен" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
+
+								<TextBlock Text="ответить строкой, словом или числом" Foreground="#2D3E50" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold"/>
+								
+							</StackPanel>
+						</Border>
+						
+						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+							<StackPanel>
+
+								<material:PackIcon Kind="FormatListBulleted" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+
+								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+								<Label Content="(Одиночный выбор)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
+
+								<TextBlock Text="Посетитель получит вопрос и должен выбрать" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
+
+								<TextBlock Text="один из вариантов" Foreground="#2D3E50" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold"/>
+
+								<Label Content="ответа" Foreground="#2D3E50" HorizontalAlignment="Center" FontSize="16"/>
+
+							</StackPanel>
+						</Border>
+
+						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+							<StackPanel>
+
+								<material:PackIcon Kind="FormatListChecks" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+
+								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+								<Label Content="(Множественный выбор)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
+
+								<TextBlock Text="Посетитель должен выполнить порученное задание и" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
+
+								<Label Content="Отсканировать QR-код" HorizontalAlignment="Center" Style="{StaticResource ProfileEdit}"/>
+
+							</StackPanel>
+						</Border>
+
+						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+							<StackPanel>
+
+								<material:PackIcon Kind="QrcodeScan" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+
+								<Label Content="Задание" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+								<Label Content="(QR-Код)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
+
+								<TextBlock Text="Посетитель должен выполнить порученное задание и" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
+
+								<Label Content="Отсканировать QR-код" HorizontalAlignment="Center" Style="{StaticResource ProfileEdit}"/>
+
+							</StackPanel>
+						</Border>
+						
+					</UniformGrid>
+				</Border>
 			</Expander>
 		</Border>
+
+		<Button Content="Добавить вопрос или задание" Foreground="White" Background="#2AC7ED" Height="30" Margin="0 7 0 0" HorizontalAlignment="Center"/>
+
 		<!--</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>-->

@@ -129,6 +129,9 @@
     <Compile Include="View\ProfileEditing.xaml.cs">
       <DependentUpon>ProfileEditing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QuestionWithTextBox.xaml.cs">
+      <DependentUpon>QuestionWithTextBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TaskCreatQuestionAndTasks.xaml.cs">
       <DependentUpon>TaskCreatQuestionAndTasks.xaml</DependentUpon>
     </Compile>
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProfileEditing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuestionWithTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
