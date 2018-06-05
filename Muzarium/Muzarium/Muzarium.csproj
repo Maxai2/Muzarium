@@ -129,6 +129,9 @@
     <Compile Include="View\PasswordBoxWithHint.xaml.cs">
       <DependentUpon>PasswordBoxWithHint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PrizeEditing.xaml.cs">
+      <DependentUpon>PrizeEditing.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PrizeShow.xaml.cs">
       <DependentUpon>PrizeShow.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PasswordBoxWithHint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PrizeEditing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
