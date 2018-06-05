@@ -19,7 +19,7 @@
 			<Border >
 				<Button Height="Auto" Background="#7E9293">
 					<StackPanel>
-						<Label Foreground="White" Content="Этап 1" HorizontalContentAlignment="Center"/>
+						<Label Foreground="White" Content="Этап 1" FontSize="18" HorizontalContentAlignment="Center"/>
 						<Label Foreground="White" Content="Информация о квесте" HorizontalContentAlignment="Center"/>
 					</StackPanel>
 				</Button>
@@ -27,14 +27,14 @@
 
 			<Button Height="Auto" Background="#95A5A5">
 				<StackPanel>
-					<Label Foreground="White" Content="Этап 2" HorizontalContentAlignment="Center"/>
+					<Label Foreground="White" Content="Этап 2" FontSize="18" HorizontalContentAlignment="Center"/>
 					<Label Foreground="White" Content="Создание вопросов и заданий" HorizontalContentAlignment="Center"/>
 				</StackPanel>
 			</Button>
 
 			<Button Height="Auto" Background="#95A5A5">
 				<StackPanel>
-					<Label Foreground="White" Content="Этап 3" HorizontalContentAlignment="Center"/>
+					<Label Foreground="White" Content="Этап 3" FontSize="18" HorizontalContentAlignment="Center"/>
 					<Label Foreground="White" Content="Возможные награды" HorizontalContentAlignment="Center"/>
 				</StackPanel>
 			</Button>
@@ -65,14 +65,14 @@
 				</interactivity:Interaction.Triggers>
 			</StackPanel>
 
-			<Button Grid.Column="2" Background="#95A5A5" Height="35">
-				<StackPanel Orientation="Horizontal" Margin="-10 0">
+			<Button Grid.Column="2" Background="#95A5A5" Height="35" Width="Auto" Margin="0 0 5 0">
+				<Grid Margin="-10 0" Width="110">
 					
 					<Label Content="Далее" Foreground="White" />
 
-					<material:PackIcon Kind="ArrowRightBold" Foreground="White" Background="#7E9293" Height="20" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+					<material:PackIcon Kind="ArrowRightBold" Foreground="White" Background="#7E9293" Height="Auto" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 					
-				</StackPanel>
+				</Grid>
 			</Button>
 
 		</Grid>

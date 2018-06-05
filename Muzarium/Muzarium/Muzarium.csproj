@@ -129,6 +129,12 @@
     <Compile Include="View\ProfileEditing.xaml.cs">
       <DependentUpon>ProfileEditing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileShowing.xaml.cs">
+      <DependentUpon>ProfileShowing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuestionWithManyAnswerSel.xaml.cs">
+      <DependentUpon>QuestionWithManyAnswerSel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\QuestionWithTextBox.xaml.cs">
       <DependentUpon>QuestionWithTextBox.xaml</DependentUpon>
     </Compile>
@@ -199,6 +205,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ProfileEditing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileShowing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QuestionWithManyAnswerSel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
