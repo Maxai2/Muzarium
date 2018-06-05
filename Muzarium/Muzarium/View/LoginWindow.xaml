@@ -35,8 +35,11 @@
 				</Grid>
 			</TabItem>
 			<TabItem Header="Registeration">
+				<StackPanel>
 
-
+					<Image Name="QrCodeImage"/>
+					
+				</StackPanel>
 
 			</TabItem>
 		</TabControl>

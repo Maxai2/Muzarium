@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Muzarium.View
 {
     /// <summary>
-    /// Interaction logic for QuestionWithManyAnswerSel.xaml
+    /// Interaction logic for PrizeShow.xaml
     /// </summary>
-    public partial class QuestionWithManyAnswerSel : Page
+    public partial class PrizeShow : Page
     {
-        public QuestionWithManyAnswerSel()
+        public PrizeShow()
         {
             InitializeComponent();
         }

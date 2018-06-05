@@ -1,4 +1,6 @@
-﻿using Muzarium.Interface;
+﻿using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
+using Muzarium.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,13 @@ namespace Muzarium.View
         {
             InitializeComponent();
             //DataContext = new PasswordBoxWithHint();
+            QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.M);
+            encoder.TryEncode("Muzarium is in Here sfgsdfgsdfg", out QrCode qrCode);
+            WriteableBitmapRenderer wRenderer = new WriteableBitmapRenderer(new FixedModuleSize(2, QuietZoneModules.Two), Colors.Black, Colors.White);
+            WriteableBitmap wBitmap = new WriteableBitmap(70, 70, 96, 96, PixelFormats.Gray8, null);
+            wRenderer.Draw(wBitmap, qrCode.Matrix);
+
+            QrCodeImage.Source = wBitmap;
         }
 
         public void BindDataContext(ILoginWindowViewModel context)

@@ -55,12 +55,10 @@
 								
 								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
 
-								<Label Content="(Текстовое поле)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
+								<TextBlock Margin="3 0" TextWrapping="Wrap" FontSize="15" Foreground="#2D3E50" TextAlignment="Center"> <Italic FontSize="16">(Текстовое поле)</Italic>
+									Посетитель получит вопрос и должен <Bold>ответить строкой, словом или числом</Bold>
+								</TextBlock>
 
-								<TextBlock Text="Посетитель получит вопрос и должен" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
-
-								<TextBlock Text="ответить строкой, словом или числом" Foreground="#2D3E50" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold"/>
-								
 							</StackPanel>
 						</Border>
 						
@@ -70,14 +68,10 @@
 								<material:PackIcon Kind="FormatListBulleted" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
 
 								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
-
-								<Label Content="(Одиночный выбор)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
-
-								<TextBlock Text="Посетитель получит вопрос и должен выбрать" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
-
-								<TextBlock Text="один из вариантов" Foreground="#2D3E50" FontSize="15" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold"/>
-
-								<Label Content="ответа" Foreground="#2D3E50" HorizontalAlignment="Center" FontSize="16"/>
+								
+								<TextBlock Margin="3 0" TextWrapping="Wrap" Foreground="#2D3E50" TextAlignment="Center" FontSize="15"> <Italic FontSize="16">(Одиночный выбор)</Italic>
+									Посетитель получит вопрос и должен выбрать <Bold>один из вариантов</Bold> ответа
+								</TextBlock>
 
 							</StackPanel>
 						</Border>
@@ -89,11 +83,9 @@
 
 								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
 
-								<Label Content="(Множественный выбор)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
-
-								<TextBlock Text="Посетитель должен выполнить порученное задание и" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
-
-								<Label Content="Отсканировать QR-код" HorizontalAlignment="Center" Style="{StaticResource ProfileEdit}"/>
+								<TextBlock Margin="3 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
+									<Italic FontSize="16">(Множественный выбор)</Italic> Посетитель получит вопрос и должен выбрать <Bold>несколько вариантов</Bold> ответа 
+								</TextBlock>
 
 							</StackPanel>
 						</Border>
@@ -105,11 +97,10 @@
 
 								<Label Content="Задание" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
 
-								<Label Content="(QR-Код)" Foreground="#2D3E50" HorizontalAlignment="Center" FontStyle="Italic" FontSize="16"/>
-
-								<TextBlock Text="Посетитель должен выполнить порученное задание и" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="#2D3E50" FontSize="15" TextAlignment="Center"/>
-
-								<Label Content="Отсканировать QR-код" HorizontalAlignment="Center" Style="{StaticResource ProfileEdit}"/>
+								<TextBlock Margin="23 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
+									<Italic FontSize="16">(QR-Код)</Italic>
+									Посетитель должен выполнить полученное задание и <Bold>отсканировать QR-код</Bold>
+								</TextBlock>
 
 							</StackPanel>
 						</Border>
