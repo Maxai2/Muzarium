@@ -12,109 +12,110 @@
 	<StackPanel Background="White">
 		<Label Content="Теперь необходимо создать вопросы и задания для квеста." HorizontalAlignment="Center" FontSize="20"/>
 
-		<!--<ListView>
+		<ListView>
 			<ListView.ItemTemplate>
-				<DataTemplate>-->
+				<DataTemplate>
 
-		<Border BorderBrush="LightGray" BorderThickness="1">
-			<Expander Foreground="#ECF0F1" Margin="3">
-				<Expander.Header>
-					<Grid Margin="0 0 -55 0">
-						<StackPanel Orientation="Horizontal">
+					<Border BorderBrush="LightGray" BorderThickness="1">
+						<Expander Foreground="#ECF0F1" Margin="3">
+							<Expander.Header>
+								<Grid Margin="0 0 -55 0">
+									<StackPanel Orientation="Horizontal">
 
-							<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
-							<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="#2D3E50"/>
-						</StackPanel>
+										<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
+										<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="#2D3E50"/>
+									</StackPanel>
 
-						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+									<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 
-							<Label Content="124453" HorizontalContentAlignment="Right" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+										<Label Content="124453" HorizontalContentAlignment="Right" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
 
-							<Label Content="MP" HorizontalContentAlignment="Right"  FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+										<Label Content="MP" HorizontalContentAlignment="Right"  FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
 
-							<Button Background="#95A5A5" Content="вниз" Margin="5"/>
+										<Button Background="#95A5A5" Content="вниз" Margin="5"/>
 
-							<Button Margin="5" Background="#95A5A5" Content="вверх"/>
+										<Button Margin="5" Background="#95A5A5" Content="вверх"/>
 
-							<material:PackIcon Kind="Pencil" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="20" Foreground="#7E9293" Margin="5"/>
+										<material:PackIcon Kind="Pencil" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="20" Foreground="#7E9293" Margin="5"/>
 
-							<material:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"  Background="Transparent" Kind="Close" Height="20" Width="20"/>
+										<material:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"  Background="Transparent" Kind="Close" Height="20" Width="20"/>
 
-						</StackPanel>
-					</Grid>
+									</StackPanel>
+								</Grid>
 
-				</Expander.Header>
+							</Expander.Header>
 
-				<Border Margin="5" BorderThickness="1" BorderBrush="LightGray">
+							<Border Margin="5" BorderThickness="1" BorderBrush="LightGray">
 
-					<UniformGrid Background="White" Columns="4">
-						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
-							<StackPanel>
-								
-								<material:PackIcon Kind="Textbox" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
-								
-								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+								<UniformGrid Background="White" Columns="4">
+									<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+										<StackPanel>
 
-								<TextBlock Margin="3 0" TextWrapping="Wrap" FontSize="15" Foreground="#2D3E50" TextAlignment="Center"> <Italic FontSize="16">(Текстовое поле)</Italic>
+											<material:PackIcon Kind="Textbox" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+
+											<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+											<TextBlock Margin="3 0" TextWrapping="Wrap" FontSize="15" Foreground="#2D3E50" TextAlignment="Center"> <Italic FontSize="16">(Текстовое поле)</Italic>
 									Посетитель получит вопрос и должен <Bold>ответить строкой, словом или числом</Bold>
-								</TextBlock>
+											</TextBlock>
 
-							</StackPanel>
-						</Border>
-						
-						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
-							<StackPanel>
+										</StackPanel>
+									</Border>
 
-								<material:PackIcon Kind="FormatListBulleted" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+									<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+										<StackPanel>
 
-								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
-								
-								<TextBlock Margin="3 0" TextWrapping="Wrap" Foreground="#2D3E50" TextAlignment="Center" FontSize="15"> <Italic FontSize="16">(Одиночный выбор)</Italic>
+											<material:PackIcon Kind="FormatListBulleted" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+
+											<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+
+											<TextBlock Margin="3 0" TextWrapping="Wrap" Foreground="#2D3E50" TextAlignment="Center" FontSize="15"> <Italic FontSize="16">(Одиночный выбор)</Italic>
 									Посетитель получит вопрос и должен выбрать <Bold>один из вариантов</Bold> ответа
-								</TextBlock>
+											</TextBlock>
 
-							</StackPanel>
-						</Border>
+										</StackPanel>
+									</Border>
 
-						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
-							<StackPanel>
+									<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+										<StackPanel>
 
-								<material:PackIcon Kind="FormatListChecks" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+											<material:PackIcon Kind="FormatListChecks" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
 
-								<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+											<Label Content="Вопрос" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
 
-								<TextBlock Margin="3 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
-									<Italic FontSize="16">(Множественный выбор)</Italic> Посетитель получит вопрос и должен выбрать <Bold>несколько вариантов</Bold> ответа 
-								</TextBlock>
+											<TextBlock Margin="3 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
+									<Italic FontSize="16">(Множественный выбор)</Italic> Посетитель получит вопрос и должен выбрать <Bold>несколько вариантов</Bold> ответа
+											</TextBlock>
 
-							</StackPanel>
-						</Border>
+										</StackPanel>
+									</Border>
 
-						<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
-							<StackPanel>
+									<Border Margin="2" BorderBrush="LightGray" BorderThickness="2">
+										<StackPanel>
 
-								<material:PackIcon Kind="QrcodeScan" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
+											<material:PackIcon Kind="QrcodeScan" Foreground="Black" HorizontalAlignment="Center" Height="80" Width="80"/>
 
-								<Label Content="Задание" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
+											<Label Content="Задание" Style="{StaticResource ProfileEdit}" Margin="0 10 0 0" HorizontalAlignment="Center"/>
 
-								<TextBlock Margin="23 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
+											<TextBlock Margin="23 0" Foreground="#2D3E50" TextWrapping="Wrap" FontSize="15" TextAlignment="Center">
 									<Italic FontSize="16">(QR-Код)</Italic>
 									Посетитель должен выполнить полученное задание и <Bold>отсканировать QR-код</Bold>
-								</TextBlock>
+											</TextBlock>
 
-							</StackPanel>
-						</Border>
-						
-					</UniformGrid>
-				</Border>
-			</Expander>
-		</Border>
+										</StackPanel>
+									</Border>
+
+								</UniformGrid>
+							</Border>
+						</Expander>
+					</Border>
+
+
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
 
 		<Button Content="Добавить вопрос или задание" Foreground="White" Background="#2AC7ED" Height="30" Margin="0 7 0 0" HorizontalAlignment="Center"/>
-
-		<!--</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>-->
 
 	</StackPanel>
 </Page>

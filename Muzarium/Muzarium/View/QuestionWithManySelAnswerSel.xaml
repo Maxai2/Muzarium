@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:Muzarium.View"
       mc:Ignorable="d" 
       d:DesignHeight="650" d:DesignWidth="500"
-      Title="QuestionWithManySelAnswerSel">
+      Title="QuestionWithManySelAnswerSel" WindowStyle="None">
 
 	<StackPanel Background="White">
 
