@@ -18,7 +18,7 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for QuestionTask.xaml
     /// </summary>
-    public partial class QuestionTask : Page
+    public partial class QuestionTask : Window
     {
         public QuestionTask()
         {

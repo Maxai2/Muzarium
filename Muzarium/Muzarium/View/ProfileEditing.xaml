@@ -54,7 +54,7 @@
 		</StackPanel>
 
 		<StackPanel Grid.Row="1" Grid.Column="1" Margin="10 0">
-			<Label Content="Веб сайт музея" Style="{StaticResource ProfileEdit}"/>
+			<Label Content="Адрес музея" Style="{StaticResource ProfileEdit}"/>
 
 			<Border BorderBrush="LightGray" BorderThickness="2">
 				<TextBox Text="{}" Margin="2"/>

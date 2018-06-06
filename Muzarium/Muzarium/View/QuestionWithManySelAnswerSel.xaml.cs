@@ -18,7 +18,7 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for QuestionWithManySelAnswerSel.xaml
     /// </summary>
-    public partial class QuestionWithManySelAnswerSel : Page
+    public partial class QuestionWithManySelAnswerSel : Window
     {
         public QuestionWithManySelAnswerSel()
         {

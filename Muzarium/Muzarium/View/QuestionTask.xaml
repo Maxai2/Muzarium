@@ -1,4 +1,4 @@
-﻿<Page x:Class="Muzarium.View.QuestionTask"
+﻿<Window x:Class="Muzarium.View.QuestionTask"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -88,4 +88,4 @@
 		<Button Content="Сохранить" Margin="0 0 7 0" Background="#03A6AA" Foreground="White" HorizontalAlignment="Right" />
 
 	</StackPanel>
-</Page>
+</Window>

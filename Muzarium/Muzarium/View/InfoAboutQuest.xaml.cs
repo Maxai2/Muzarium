@@ -18,7 +18,7 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for InfoAboutQuest.xaml
     /// </summary>
-    public partial class InfoAboutQuest : Page
+    public partial class InfoAboutQuest : Window
     {
         public InfoAboutQuest()
         {

@@ -18,7 +18,7 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for PrizeEditing.xaml
     /// </summary>
-    public partial class PrizeEditing : Page
+    public partial class PrizeEditing : Window
     {
         public PrizeEditing()
         {

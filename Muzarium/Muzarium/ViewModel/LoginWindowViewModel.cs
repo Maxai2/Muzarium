@@ -32,7 +32,6 @@ namespace Muzarium.ViewModel
             }
         }
 
-
         public ICommand RegisterCommand { get; set; }
         public Museums museum { get; set; }
     }

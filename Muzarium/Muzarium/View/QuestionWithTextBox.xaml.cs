@@ -18,7 +18,7 @@ namespace Muzarium.View
     /// <summary>
     /// Interaction logic for QuestionWithTextBox.xaml
     /// </summary>
-    public partial class QuestionWithTextBox : Page
+    public partial class QuestionWithTextBox : Window
     {
         public QuestionWithTextBox()
         {

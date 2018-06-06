@@ -1,4 +1,4 @@
-﻿<Page x:Class="Muzarium.View.InfoAboutQuest"
+﻿<Window x:Class="Muzarium.View.InfoAboutQuest"
 						xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 						xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
 						xmlns:local="clr-namespace:Muzarium.View"
 						mc:Ignorable="d" 
 						d:DesignHeight="450" d:DesignWidth="800"
-						Title="InfoAboutQuest">
+						Title="InfoAboutQuest" WindowStyle="None">
 
 	<StackPanel Background="White">
 		<Grid>
@@ -52,7 +52,7 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 
-						<Border BorderBrush="LightGray" BorderThickness="1">
+						<Border BorderBrush="LightGray" BorderThickness="1" Width="776">
 							<Expander Foreground="#ECF0F1" Margin="3">
 								<Expander.Header>
 									<Grid>
@@ -80,4 +80,4 @@
 
 		</StackPanel>
 	</StackPanel>
-</Page>
+</Window>

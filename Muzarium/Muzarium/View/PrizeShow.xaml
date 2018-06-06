@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+						xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Muzarium.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -12,38 +13,62 @@
 		<Label Content="В завершении вы можете указать приз, который посетитель получит после успешного прохождения квеста." HorizontalAlignment="Center" FontSize="15"/>
 
 		<StackPanel Width="500">
-			
-		<Separator Height="10"/>
 
-		<StackPanel Orientation="Horizontal">
-			<RadioButton VerticalAlignment="Center" IsChecked="True" Background="Black" GroupName="PrizeSel"/>
-			<Label Visibility="Hidden" Width="80"/>
-			<Label Content="Без приза"/>
-		</StackPanel>
+			<Separator Height="10"/>
 
-		<Separator Height="20"/>
+			<StackPanel Orientation="Horizontal">
+				<RadioButton VerticalAlignment="Center" IsChecked="True" Background="Black" GroupName="PrizeSel"/>
+				<Label Visibility="Hidden" Width="80"/>
+				<Label Content="Без приза"/>
+			</StackPanel>
 
-		<ListView>
+			<Separator Height="20"/>
+
+			<ListView>
 				<ListView.ItemTemplate>
 					<DataTemplate>
 
-				<StackPanel Orientation="Horizontal">
-					<RadioButton Margin="-8 0 0 0" GroupName="PrizeSel"/>
-					<Label Visibility="Hidden" Width="80"/>
-					<Image Source="../Resources/MuzariumIcon.png"/>
-					<Label Visibility="Hidden" Width="80"/>
-					<Label Content="Приз"/>
-				</StackPanel>
-			
+						<StackPanel Orientation="Horizontal">
+							<RadioButton Margin="-8 0 0 0" GroupName="PrizeSel"/>
+							<Label Visibility="Hidden" Width="80"/>
+							<Image Source="../Resources/MuzariumIcon.png"/>
+							<Label Visibility="Hidden" Width="80"/>
+							<Label Content="Приз"/>
+						</StackPanel>
+
 					</DataTemplate>
 				</ListView.ItemTemplate>
-		</ListView>
+			</ListView>
 
 			<StackPanel HorizontalAlignment="Center" Margin="0 10 0 0" Orientation="Horizontal">
 				<Label Content="Или создайте новый приз." VerticalAlignment="Center"/>
 				<Button Content="Создать приз" Foreground="White" Background="#2AC7ED" Height="40"/>
 			</StackPanel>
-			
+
+			<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10 0 0">
+
+				<StackPanel Orientation="Horizontal">
+					<Button BorderThickness="1" BorderBrush="LightGray">
+						<material:PackIcon Kind="Minus"/>
+					</Button>
+
+					<Label Content="15" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+					<Image Source="../Resources/PointIcon.png" VerticalAlignment="Center"/>
+
+					<Button Background="#017D7C">
+						<material:PackIcon Kind="Plus" Foreground="White"/>
+					</Button>
+
+					<Label Visibility="Hidden" Width="50"/>
+
+					<Label Content="из 15" VerticalAlignment="Center"/>
+
+				</StackPanel>
+
+			</StackPanel>
+
 		</StackPanel>
+
 	</StackPanel>
 </Page>

@@ -41,7 +41,7 @@
 				<Label Content="Описание" Foreground="#2D3E50" Margin="0 10 0 0" FontSize="20"/>
 
 				<Border BorderBrush="LightGray" BorderThickness="2" Height="60">
-					<TextBlock Margin="2" TextWrapping="Wrap"/>
+					<TextBlock Margin="2" TextWrapping="Wrap" />
 				</Border>
 
 				<Button Content="Добавить описание" Margin="0 10 0 0" Background="#03A6AA" Foreground="White" HorizontalAlignment="Left"/>
@@ -160,13 +160,6 @@
 											</Ellipse.Fill>
 										</Ellipse>
 										<Label Content="{Binding}"/>
-									</StackPanel>
-
-									<StackPanel Grid.Row="1"		Orientation="Horizontal">
-										<Button Content="Открыть" Background="#03A6AA" Margin="2"/>
-										<Button Content="Редактировать" Background="#F39C0E" Margin="2"/>
-										<Button Content="Статистика" Background="#2EC6ED" Margin="2"/>
-										<Button Content="Удалить" Background="#EF4663" Margin="2"/>
 									</StackPanel>
 								</Grid>
 							</DataTemplate>

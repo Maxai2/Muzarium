@@ -27,7 +27,7 @@ namespace Muzarium.View
             InitializeComponent();
             //DataContext = new PasswordBoxWithHint();
             QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.M);
-            encoder.TryEncode("Muzarium is in Here sfgsdfgsdfg", out QrCode qrCode);
+            encoder.TryEncode("jhfjkhgvjk", out QrCode qrCode);
             WriteableBitmapRenderer wRenderer = new WriteableBitmapRenderer(new FixedModuleSize(2, QuietZoneModules.Two), Colors.Black, Colors.White);
             WriteableBitmap wBitmap = new WriteableBitmap(70, 70, 96, 96, PixelFormats.Gray8, null);
             wRenderer.Draw(wBitmap, qrCode.Matrix);
