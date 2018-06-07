@@ -35,7 +35,13 @@
 		</Grid>
 
 		<Label Content="Уровень сложности" Style="{StaticResource ProfileEdit}"/>
-		<StackPanel Orientation="Horizontal">
+		<ComboBox HorizontalAlignment="Left" SelectedIndex="0" Background="LightGray">
+			<TextBlock Text="Легкий" Background="#03A6AA"/>
+			<TextBlock Text="Средний" Background="#F39C0E"/>
+			<TextBlock Text="Тяжелый" Background="#EF4663"/>
+		</ComboBox>
+		
+		<!--<StackPanel Orientation="Horizontal">
 			<Border Background="#03A6AA" CornerRadius="2" Width="80" Height="30">
 				<RadioButton Content="Легкий" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" IsChecked="True" GroupName="Difficult" Background="Black"/>
 			</Border>
@@ -45,7 +51,7 @@
 			<Border Background="#EF4663" CornerRadius="2" Width="80" Height="30">
 				<RadioButton Content="Тяжелый" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" GroupName="Difficult" Background="Black"/>
 			</Border>
-		</StackPanel>
+		</StackPanel>-->
 
 	</StackPanel>
 </Page>
