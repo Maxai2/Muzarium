@@ -25,7 +25,10 @@ namespace Muzarium.View
         public LoginWindow()
         {
             InitializeComponent();
-            //DataContext = new PasswordBoxWithHint();
+            DataContext = new PasswordBoxWithHint();
+
+            
+
             QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.M);
             encoder.TryEncode("jhfjkhgvjk", out QrCode qrCode);
             WriteableBitmapRenderer wRenderer = new WriteableBitmapRenderer(new FixedModuleSize(2, QuietZoneModules.Two), Colors.Black, Colors.White);

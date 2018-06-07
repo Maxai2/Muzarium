@@ -26,63 +26,25 @@ namespace Muzarium.View
         {
             InitializeComponent();
 
+            this.FakePass.Visibility = Visibility.Collapsed;
         }
 
         bool change = true;
 
-        private ICommand showCommand;
-        public ICommand ShowCommand
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            get
+            if (change)
             {
-                if (this.showCommand is null)
-                {
-                    this.showCommand = new RelayCommand(
-                        (param) =>
-                        {
-                            if (change)
-                            {
-                                PassBox.Visibility = Visibility.Collapsed;
-                                FakePass.Visibility = Visibility.Visible;
-                            }
-                            else
-                            {
-                                PassBox.Visibility = Visibility.Visible;
-                                FakePass.Visibility = Visibility.Collapsed;
-                            }
-
-                            change = !change;
-                        },
-                        (param) =>
-                        {
-                            if (FakePass.Text == string.Empty)
-                                return true;
-                            else
-                                return true;
-                        });
-                }
-                return this.showCommand;
+                PassBox.Visibility = Visibility.Collapsed;
+                FakePass.Visibility = Visibility.Visible;
             }
-        }
-
-        private ICommand hintCommand;
-        public ICommand HintCommand
-        {
-            get
+            else
             {
-                if (hintCommand is null)
-                {
-                    hintCommand = new RelayCommand(
-                        (param) =>
-                        {
-                            PassBox.Visibility = Visibility.Visible;
-                            FakePass.Visibility = Visibility.Collapsed;
-
-                        }, null);
-                }
-                return hintCommand;
+                PassBox.Visibility = Visibility.Visible;
+                FakePass.Visibility = Visibility.Collapsed;
             }
-        }
 
+            change = !change;
+        }
     }
 }

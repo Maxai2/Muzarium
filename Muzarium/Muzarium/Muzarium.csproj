@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Common\DataProvider.cs" />
     <Compile Include="Common\NotifiableObject.cs" />
+    <Compile Include="Common\PasswordBoxHelper.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Interface\IAuthenticationService.cs" />
     <Compile Include="Interface\ILoginWindow.cs" />
