@@ -38,7 +38,13 @@
 				<StackPanel>
 
 					<Image Name="QrCodeImage"/>
-					
+
+					<ComboBox HorizontalAlignment="Left" SelectedIndex="0" Background="LightGray" Width="100" Style="{x:Null}">
+						<TextBlock Text="Легкий"/>
+						<TextBlock Text="Средний"/>
+						<TextBlock Text="Тяжелый"/>
+					</ComboBox>
+
 				</StackPanel>
 
 			</TabItem>
