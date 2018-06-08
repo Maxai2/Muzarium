@@ -37,11 +37,15 @@ namespace Muzarium.View
             {
                 PassBox.Visibility = Visibility.Collapsed;
                 FakePass.Visibility = Visibility.Visible;
+
+                eyeButton.Kind = MaterialDesignThemes.Wpf.PackIconKind.Eye;
             }
             else
             {
                 PassBox.Visibility = Visibility.Visible;
                 FakePass.Visibility = Visibility.Collapsed;
+
+                eyeButton.Kind = MaterialDesignThemes.Wpf.PackIconKind.EyeOff;
             }
 
             change = !change;
