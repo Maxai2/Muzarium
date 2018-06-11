@@ -68,8 +68,6 @@
 			<Border Grid.Column="2">
 
 				<Button BorderThickness="0" Style="{x:Null}" Padding="0" Background="#95A5A5" Height="35" Width="110" Margin="1">
-					<Button.OpacityMask>
-						<ImageBrush ></ImageBrush>
 						<Grid Margin="-10 0" Width="110">
 
 							<Label Content="Далее" Margin="10 0 0 0" Foreground="White" VerticalAlignment="Center"/>
@@ -77,7 +75,6 @@
 							<material:PackIcon Kind="ArrowRightBold" Foreground="White" Background="#7E9293" Height="Auto" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
 						</Grid>
-					</Button.OpacityMask>
 				</Button>
 			</Border>
 

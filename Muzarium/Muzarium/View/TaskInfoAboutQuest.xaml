@@ -31,6 +31,7 @@
 			<StackPanel Grid.Column="1" Margin="20 0 0 0">
 				<Label Style="{StaticResource ProfileEdit}" Content="Изображение"/>
 				<Image Source="../Resources/MuzariumIcon.png" Height="200"/>
+				<Button Background="#2D3E50" Content="Добавить изображение" Foreground="White" HorizontalAlignment="Right" Margin="0 10 0 0"/>
 			</StackPanel>
 		</Grid>
 
