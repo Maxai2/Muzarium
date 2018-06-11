@@ -54,7 +54,7 @@
 				<ColumnDefinition/>
 				<ColumnDefinition Width="0.4*"/>
 			</Grid.ColumnDefinitions>
-			
+
 			<StackPanel VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
 				<material:PackIcon Kind="ArrowLeftThick" Width="17" Height="17" Margin="0 3 0 0"/>
 				<Label Content="Вернуться в профиль музея" Foreground="#03A6AA" FontWeight="Bold" Padding="0 3 0 0"/>
@@ -65,15 +65,21 @@
 				</interactivity:Interaction.Triggers>
 			</StackPanel>
 
-			<Button Grid.Column="2" Background="#95A5A5" Height="35" Width="Auto" Margin="0 0 5 0">
-				<Grid Margin="-10 0" Width="110">
-					
-					<Label Content="Далее" Foreground="White" />
+			<Border Grid.Column="2">
 
-					<material:PackIcon Kind="ArrowRightBold" Foreground="White" Background="#7E9293" Height="Auto" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-					
-				</Grid>
-			</Button>
+				<Button BorderThickness="0" Style="{x:Null}" Padding="0" Background="#95A5A5" Height="35" Width="110" Margin="1">
+					<Button.OpacityMask>
+						<ImageBrush ></ImageBrush>
+						<Grid Margin="-10 0" Width="110">
+
+							<Label Content="Далее" Margin="10 0 0 0" Foreground="White" VerticalAlignment="Center"/>
+
+							<material:PackIcon Kind="ArrowRightBold" Foreground="White" Background="#7E9293" Height="Auto" Width="50" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+
+						</Grid>
+					</Button.OpacityMask>
+				</Button>
+			</Border>
 
 			<Button Grid.Column="2" Background="#00A9A6" Height="35" Width="Auto" Margin="0 0 5 0"  Visibility="Collapsed">
 				<Grid Margin="-10 0" Width="110">
