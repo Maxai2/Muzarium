@@ -25,7 +25,7 @@
 				<ColumnDefinition/>
 			</Grid.ColumnDefinitions>
 
-			<Ellipse Grid.Column="0" Height="80" Width="80" Stroke="Yellow" StrokeThickness="4">
+			<Ellipse Grid.Column="0" Height="80" Width="80">
 				<Ellipse.Fill>
 					<ImageBrush ImageSource="../Resources/MuzariumIcon.PNG"/>
 				</Ellipse.Fill>
@@ -45,39 +45,55 @@
 			<Label Grid.Column="3" Content="asdf" Foreground="#2D3E50"/>
 		</Grid>
 
-		<StackPanel>
-			<Label Content="Задания" HorizontalContentAlignment="Center" FontSize="20" Foreground="#2D3E50"/>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
 
-			<ListView>
-				<ListView.ItemTemplate>
-					<DataTemplate>
+			<Label Grid.Row="0" Content="Задания" HorizontalContentAlignment="Center" FontSize="20" Foreground="#2D3E50"/>
 
-						<Border BorderBrush="LightGray" BorderThickness="1" Width="776">
-							<Expander Foreground="#ECF0F1" Margin="3">
-								<Expander.Header>
-									<Grid>
-										<StackPanel Orientation="Horizontal">
-											<Label Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
-											<Label Content="asdf" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
-										</StackPanel>
+			<ListBox Grid.Row="1" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"> 
+				<!--<ListView.ItemTemplate>
+					<DataTemplate>-->
 
-										<Label Content="124453" HorizontalContentAlignment="Right" Margin="0 0 -25 0" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+				<Border BorderBrush="LightGray" BorderThickness="1" Width="776">
+					<Expander Foreground="#ECF0F1" Margin="3">
+						<Expander.Header>
+							<Grid Margin="0 0 -60 0">
+								<Grid>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="Auto"/>
+										<ColumnDefinition/>
+										<ColumnDefinition Width="Auto"/>
+										<ColumnDefinition Width="Auto"/>
+									</Grid.ColumnDefinitions>
 
-										<Label Content="MP" HorizontalContentAlignment="Right" Margin="0 0 -50 0" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
-									</Grid>
-								</Expander.Header>
+									<Label Grid.Column="0" Content="Вопрос:" FontWeight="Bold" FontSize="19" Foreground="#2D3E50"/>
 
-								<StackPanel Background="White">
-									<Image Source="../Resources/MuzariumIcon.PNG" Height="Auto" Width="100"/>
-									<Label Content="Ответ(ы):" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
-									<Label Content="ffdgfdg" HorizontalContentAlignment="Center" FontSize="16"/>
-								</StackPanel>
-							</Expander>
-						</Border>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
+									<TextBlock Grid.Column="1" Text="asbfgbasdjklfbasdjklf" VerticalAlignment="Center" FontSize="17" TextWrapping="Wrap" Foreground="#2D3E50"/>
 
-		</StackPanel>
+									<TextBlock Grid.Column="2" />
+
+									<Label Grid.Column="2" Content="124453" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+
+									<Label Grid.Column="3" Content="MP" FontSize="17" VerticalContentAlignment="Center" Foreground="#2D3E50"/>
+									
+								</Grid>
+							</Grid>
+						</Expander.Header>
+
+						<StackPanel Background="White">
+							<Image Source="../Resources/MuzariumIcon.PNG" Height="Auto" Width="100"/>
+							<Label Content="Ответ(ы):" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold"/>
+							<Label Content="ffdgfdg" HorizontalContentAlignment="Center" FontSize="16"/>
+						</StackPanel>
+					</Expander>
+				</Border>
+				<!--</DataTemplate>
+				</ListView.ItemTemplate>-->
+			</ListBox>
+
+		</Grid>
 	</StackPanel>
 </Window>
