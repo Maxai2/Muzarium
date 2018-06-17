@@ -142,6 +142,9 @@
     <Compile Include="View\ProfileShowing.xaml.cs">
       <DependentUpon>ProfileShowing.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QuestionSelWindow.xaml.cs">
+      <DependentUpon>QuestionSelWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\QuestionTask.xaml.cs">
       <DependentUpon>QuestionTask.xaml</DependentUpon>
     </Compile>
@@ -236,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\QuestionSelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\QuestionTask.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\MuzariumIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\PointIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
